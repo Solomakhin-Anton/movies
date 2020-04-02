@@ -10,11 +10,11 @@ public class AfishaRepository {
             new Movie(7, "Number One", "comedy")};
 
     Movie movie = new Movie(8, "Sonic the Hedgehog", "comedy");
-
     Movie[] findAll() {
         for (int i = 0; i < list.length; i++) {
             System.out.println(list[i]);
         }
+
         return list;
     }
 
@@ -24,6 +24,7 @@ public class AfishaRepository {
         for (int i = 0; i < list.length; i++) {
             addedFilm[i] = list[i];
         }
+
         int lastIndex = addedFilm.length - 1;
         addedFilm[lastIndex] = movie;
         list = addedFilm;
@@ -34,10 +35,11 @@ public class AfishaRepository {
             if (item.getId() == id) {
                 return item;
             }
+
         }
+
         return null;
     }
-
 
     void removeById(int id) {
         boolean b = false;
@@ -46,7 +48,9 @@ public class AfishaRepository {
                 b = true;
                 break;
             }
+
         }
+
         if (b) {
             int length = list.length - 1;
             Movie[] newArray = new Movie[length];
@@ -56,13 +60,16 @@ public class AfishaRepository {
                     newArray[index] = item;
                     index++;
                 }
+
             }
+
             list = newArray;
         }
+
     }
 
     void removeAll() {
         list= new Movie[0];
-
     }
+
 }

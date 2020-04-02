@@ -20,13 +20,11 @@ class ManagerTest {
                 new Movie(7, "Number One", "comedy"),
                 new Movie(8, "Sonic the Hedgehog", "comedy")};
         assertArrayEquals(expected, actual);
-
     }
 
     @Test
     void showFilms() {
         manager.addFilm(movie);
         Movie[] movie = manager.showFilms();
-
     }
 }

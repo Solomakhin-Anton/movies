@@ -6,9 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class AfishaRepositoryTest {
-
     AfishaRepository repo = new AfishaRepository();
-
     @Test
     void shouldFindAll() {
         Movie[] expected = {new Movie(1, "Bladshort", "action"),
@@ -36,8 +34,6 @@ class AfishaRepositoryTest {
                 new Movie(8, "Sonic the Hedgehog", "comedy")};
         Movie[] actual = repo.findAll();
         assertArrayEquals(expected, actual);
-
-
     }
 
     @Test
@@ -45,8 +41,6 @@ class AfishaRepositoryTest {
         Movie expected = new Movie(4, "Gentlemen", "action");
         Movie actual = repo.findByID(4);
         assertEquals(expected, actual);
-
-
     }
 
     @Test
@@ -61,6 +55,7 @@ class AfishaRepositoryTest {
         Movie[] actual = repo.findAll();
         assertArrayEquals(expected, actual);
     }
+
     @Test
     void shouldRemoveByIdIfIDDoesNotExist() {
         repo.removeById(11);
@@ -75,14 +70,12 @@ class AfishaRepositoryTest {
         assertArrayEquals(expected, actual);
     }
 
-
-
     @Test
     void shouldRemoveAll() {
         repo.removeAll();
         Movie[] expected = {};
         Movie[] actual = repo.findAll();
         assertArrayEquals(expected, actual);
-
     }
+    
 }
